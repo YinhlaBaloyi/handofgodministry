@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HGI Media Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #1e3a8a;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+
+    .logout-btn {
+      background: #ef4444;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      margin-top: 1rem;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input[type="file"], input[type="text"], select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      background: #1e3a8a;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      margin-top: 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #3749b6;
+    }
+
+    .message {
+      padding: 1rem;
+      background: #d1fae5;
+      border: 1px solid #10b981;
+      border-radius: 8px;
+      color: #065f46;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HGI Media Admin</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <div class="container">
+    <h2>Upload Media</h2>
+    <form id="upload-form">
+      <label for="media-type">Media Type</label>
+      <select id="media-type">
+        <option value="image">Image</option>
+        <option value="video">Video</option>
+      </select>
+      <label for="media-title">Title</label>
+      <input type="text" id="media-title" required>
+      <label for="media-date">Date</label>
+      <input type="date" id="media-date" required>
+      <label for="media-file">Select File</label>
+      <input type="file" id="media-file" accept="image/*,video/*" required>
+      <button type="submit">Upload</button>
+    </form>
+
+    <h2>Update Church Info</h2>
+    <form id="update-info-form">
+      <label for="church-info">New Info</label>
+      <textarea id="church-info" rows="5"></textarea>
+      <button type="submit">Update Info</button>
+    </form>
+  </div>
+
+  <script src="firebase-config.js"></script>
+  <script>
+    function logout() {
+      alert("Logging out (placeholder)");
+    }
+  </script>
+</body>
+</html>
